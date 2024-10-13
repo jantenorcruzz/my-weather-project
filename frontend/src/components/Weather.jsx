@@ -1,11 +1,12 @@
 import React from 'react'
 import sampleImg from '../assets/react.svg'
 import _ from 'lodash'
-function Weather({data}) {
+function Weather({data, icon}) {
   return (
     <div className='flex flex-col gap-4'>
+    <h1 className='text-2xl text-center'>{data.sys.country}</h1>
         <h1 className='text-4xl font-bold text-center'>{data.name}</h1>
-        <img src={sampleImg} className='h-40' />
+        <img src={icon} className='h-40' />
         <p className='text-center text-2xl font-bold'>{_.capitalize(data.weather[0].description)}</p>
         <div className='flex flex-col justify-center items-center'>
             <h1 className='text-4xl'>{data.main.temp}°C</h1>
